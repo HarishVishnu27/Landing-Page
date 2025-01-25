@@ -177,52 +177,32 @@
       margin-top: 3rem;
     }
 
-    @media (max-width: 1024px) {
-      .main-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+     @media screen and (max-width: 480px) {
+      html {
+        font-size: 16px; /* Base font size for better readability */
       }
 
-      .left-section, .right-section {
-        text-align: center;
+      body {
+        zoom: 1.75; /* Force 175% zoom on mobile */
+        -moz-transform: scale(1.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(1.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(1.75);
+        -webkit-transform-origin: 0 0;
+        transform: scale(1.75);
+        transform-origin: 0 0;
+        width: 57.14%; /* 100/1.75 to maintain layout */
       }
 
-      .left-section h1 {
-        font-size: 3rem;
-      }
-
-      .countdown {
-        justify-content: center;
-      }
-
-      .right-section img {
-        max-width: 18rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .left-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .countdown .time {
-        min-width: 70px;
-        padding: 0.75rem;
-      }
-
-      .countdown .time p {
-        font-size: 2rem;
-      }
-
-      .right-section img {
-        max-width: 15rem;
-      }
-    }
-
-    @media (max-width: 480px) {
       .container {
         padding: 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .top-heading {
+        font-size: 1.5rem;
       }
 
       .left-section h1 {
@@ -244,15 +224,17 @@
       .right-section img {
         max-width: 12rem;
       }
+    }
 
-      /* Mimic 175% zoom effect on mobile */
+    /* Add a media query to ensure normal zoom on desktop/laptop */
+    @media screen and (min-width: 481px) {
       body {
-        transform: scale(1.75);
-        transform-origin: top left;
-      }
-      .container {
-        width: 57.14%;
-        margin-left: -14.28%;
+        zoom: 1;
+        -moz-transform: none;
+        -o-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        width: 100%;
       }
     }
   </style>
