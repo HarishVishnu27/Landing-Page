@@ -17,11 +17,16 @@
       background: #150e28;
       color: #fff;
       line-height: 1.6;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
+      width: 100%;
       max-width: 800px;
-      margin: 0 auto;
       padding: 2rem;
       display: flex;
       flex-direction: column;
@@ -180,6 +185,10 @@
     }
 
     @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+
       .top-heading {
         font-size: 1.5rem;
       }
@@ -227,11 +236,11 @@
             <span>Hours</span>
           </div>
           <div class="time">
-            <p>14</p>
+            <p>12</p>
             <span>Minutes</span>
           </div>
           <div class="time">
-            <p>46</p>
+            <p>02</p>
             <span>Seconds</span>
           </div>
         </div>
