@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Ensures the page scales correctly on different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tezario 2025 Hackathon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset and base styling */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
-      font-size: 16px;
     }
 
     body {
@@ -22,174 +21,301 @@
       color: #ffffff;
       line-height: 1.6;
       overflow-x: hidden;
-      width: 100%;
-      max-width: 100%;
     }
 
     .container {
-      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem;
+      padding: 2rem;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 100vh;
+    }
+
+    .top-heading {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 3rem;
+      letter-spacing: 1px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .main-content {
       display: flex;
       align-items: center;
+      gap: 2rem;
       flex-wrap: wrap;
-      gap: 1rem;
     }
 
-    .left-section, .right-section {
+    .left-section {
       flex: 1;
-      min-width: 280px;
-      width: 100%;
-      text-align: center;
+      min-width: 300px;
+      color: white;
     }
 
     .left-section h1 {
-      font-size: 2.5rem;
+      font-size: 4rem;
       font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
       background: white;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+      /* Animation */
+      animation: slideIn 2s ease-out;
+    }
+
+    /* Keyframes for sliding animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .left-section p {
-      font-size: 1rem;
-      max-width: 100%;
-      margin: 1rem 0;
+      font-size: 1.25rem;
+      color: #ffffff;
+      max-width: 35rem;
+      margin-bottom: 2rem;
     }
 
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin: 1rem 0;
-    }
-
-    .countdown .time {
-      background-color: rgba(255, 252, 253, 0.1);
-      padding: 0.5rem;
-      border-radius: 5px;
-      text-align: center;
-      min-width: 60px;
-    }
-
-    .countdown .time p {
-      font-size: 1.5rem;
-      color: #6b46c1;
-      margin-bottom: 0.25rem;
-    }
-
-    .countdown .time span {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-    }
-
-    .right-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-    }
-
+    /* Loading bar styles */
     .loading-bar-container {
       width: 100%;
-      height: 5px;
+      height: 10px;
       background-color: rgba(233, 69, 96, 0.2);
-      margin: 1rem 0;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
     }
 
     .loading-bar {
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, #e94560, #7301ed);
-      animation: loading 2s linear infinite;
+      background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
+      background-size: 200% 100%;
+      animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      border-radius: 5px;
     }
 
     @keyframes loading {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
     }
 
-   /* Enhanced Mobile Responsiveness */
-    @media (max-width: 480px) {
-      body {
-        font-size: 14px; /* Slightly reduced base font size */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
+          0 0 15px rgba(115, 1, 237, 0.8);
       }
 
-      .container {
-        padding: 1rem;
-        width: 100%;
+      50% {
+        box-shadow: 0 0 20px rgba(233, 69, 96, 1),
+          0 0 25px rgba(115, 1, 237, 1);
       }
 
-      .top-heading {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+      100% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
+          0 0 15px rgba(115, 1, 237, 0.8);
       }
+    }
 
+    .countdown {
+      display: flex;
+      justify-content: start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown .time {
+      text-align: center;
+      background-color: rgba(255, 252, 253, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      min-width: 80px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .countdown .time:hover {
+      transform: translateY(-5px);
+    }
+
+    .countdown .time p {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #6b46c1;
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown .time span {
+      font-size: 0.875rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 300px;
+    }
+
+    .right-section img {
+      width: 100%;
+      max-width: 20rem;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .right-section img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Tablet and larger smartphones */
+    @media (max-width: 1024px) {
       .main-content {
         flex-direction: column;
-        gap: 1rem;
+        text-align: center;
+        gap: 2rem;
       }
 
-      .left-section, .right-section {
-        min-width: 100%;
+      .left-section,
+      .right-section {
         text-align: center;
       }
 
       .left-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .left-section p {
-        font-size: 1rem;
-        max-width: 100%;
+        font-size: 3rem;
       }
 
       .countdown {
         justify-content: center;
-        gap: 0.5rem;
-      }
-
-      .countdown .time {
-        min-width: 60px;
-        padding: 0.5rem;
-      }
-
-      .countdown .time p {
-        font-size: 1.5rem;
       }
 
       .right-section img {
-        max-width: 100%;
-        width: 100%;
+        max-width: 18rem;
       }
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 768px) {
+      .left-section h1 {
+        font-size: 3rem;
+      }
+
       .countdown .time {
-        min-width: 50px;
-        padding: 0.3rem;
+        min-width: 80px;
+        padding: 1rem;
       }
 
       .countdown .time p {
-        font-size: 1.2rem;
+        font-size: 2.2rem;
+      }
+
+      .right-section img {
+        max-width: 18rem;
+      }
+    }
+
+    /* 
+      Increase sizes for very small devices (max-width: 480px):
+      - Double the font sizes
+      - Double the image sizes
+    */
+    @media (max-width: 480px) {
+      .top-heading {
+        font-size: 3rem; /* Original was 2rem */
+      }
+
+      .left-section h1 {
+        font-size: 4rem; /* Original was 2.5rem */
+      }
+
+      .left-section p {
+        font-size: 2.4rem; /* Original was 1.2rem */
+      }
+
+      .countdown .time p {
+        font-size: 3.6rem; /* Original was 1.8rem */
+      }
+
+      .right-section img {
+        max-width: 28rem; /* Original was 14rem */
+      }
+
+      /* Optional: Adjust padding and margins for better spacing */
+      .container {
+        padding: 3rem;
+      }
+
+      .countdown .time {
+        padding: 1.5rem; /* Original was 0.75rem */
+      }
+
+      /* Adjust loading-text if present */
+      .loading-text {
+        font-size: 2rem; /* Adjust as needed */
+      }
+    }
+
+    /* Additional Animation for "TEZARIO 2k25" Text */
+    .left-section h1 {
+      position: relative;
+      animation: glowText 3s infinite;
+    }
+
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
+      }
+      50% {
+        text-shadow: 0 0 20px #e94560, 0 0 30px #e94560, 0 0 40px #7301ed, 0 0 50px #7301ed;
+      }
+      100% {
+        text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
+    <div class="top-heading">
+      Igniting a Revolution in Innovation
+    </div>
+
     <div class="main-content">
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
 
+        <div class="loading-container">
+          <div class="loading-text">IGNITING PROGRESS...</div><br>
+        </div>
         <div class="loading-bar-container">
           <div class="loading-bar"></div>
         </div>
@@ -221,6 +347,7 @@
   </div>
 
   <script>
+    // Countdown to 2025-02-21
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
@@ -240,8 +367,10 @@
       }
     }
 
+    // Initialize and update countdown every second
     calculateTimeLeft();
     setInterval(calculateTimeLeft, 1000);
   </script>
 </body>
+
 </html>
