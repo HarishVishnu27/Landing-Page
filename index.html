@@ -3,13 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Ensures normal 100% scale on mobile, then we apply our own transform for doubling (200%) -->
+  <!-- Ensures the page scales correctly on different devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tezario 2025 Hackathon</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset and base styling */
     * {
@@ -102,22 +99,29 @@
     }
 
     @keyframes loading {
-      0% { left: -100%; }
-      100% { left: 100%; }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
     }
 
     @keyframes glow {
       0% {
         box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-                    0 0 15px rgba(115, 1, 237, 0.8);
+          0 0 15px rgba(115, 1, 237, 0.8);
       }
+
       50% {
         box-shadow: 0 0 20px rgba(233, 69, 96, 1),
-                    0 0 25px rgba(115, 1, 237, 1);
+          0 0 25px rgba(115, 1, 237, 1);
       }
+
       100% {
         box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-                    0 0 15px rgba(115, 1, 237, 0.8);
+          0 0 15px rgba(115, 1, 237, 0.8);
       }
     }
 
@@ -223,43 +227,44 @@
       }
     }
 
-    /*
-      Scale the page to 200% on mobile widths below 480px.
-      Adjust .container width and margin to counter
-      the horizontal overflow caused by scaling.
+    /* 
+      Increase sizes for very small devices (max-width: 480px):
+      - Double the font sizes
+      - Double the image sizes
     */
     @media (max-width: 480px) {
-      body {
-        transform: scale(2);
-        transform-origin: top left;
-      }
-      .container {
-        width: 50%;
-        margin-left: -25%;
-      }
-
-      .container {
-        padding: 1.5rem;
+      .top-heading {
+        font-size: 3rem; /* Original was 2rem */
       }
 
       .left-section h1 {
-        font-size: 2.5rem;
+        font-size: 4rem; /* Original was 2.5rem */
       }
 
       .left-section p {
-        font-size: 1.2rem;
-      }
-
-      .countdown .time {
-        padding: 0.75rem;
+        font-size: 2.4rem; /* Original was 1.2rem */
       }
 
       .countdown .time p {
-        font-size: 1.8rem;
+        font-size: 3.6rem; /* Original was 1.8rem */
       }
 
       .right-section img {
-        max-width: 14rem;
+        max-width: 28rem; /* Original was 14rem */
+      }
+
+      /* Optional: Adjust padding and margins for better spacing */
+      .container {
+        padding: 3rem;
+      }
+
+      .countdown .time {
+        padding: 1.5rem; /* Original was 0.75rem */
+      }
+
+      /* Adjust loading-text if present */
+      .loading-text {
+        font-size: 2rem; /* Adjust as needed */
       }
     }
   </style>
