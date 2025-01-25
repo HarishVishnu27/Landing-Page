@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Tezario 2025 Hackathon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Existing styles remain the same */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
     }
 
     body {
@@ -20,21 +22,101 @@
       color: #ffffff;
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
     }
 
     .container {
+      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
-      min-height: 100vh;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-height: 100vh;
     }
 
-    /* All previous CSS remains exactly the same */
+    .main-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-    /* Enhanced Mobile Responsiveness */
+    .left-section, .right-section {
+      flex: 1;
+      min-width: 280px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .left-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .left-section p {
+      font-size: 1rem;
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .countdown .time {
+      background-color: rgba(255, 252, 253, 0.1);
+      padding: 0.5rem;
+      border-radius: 5px;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .countdown .time p {
+      font-size: 1.5rem;
+      color: #6b46c1;
+      margin-bottom: 0.25rem;
+    }
+
+    .countdown .time span {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .right-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    .loading-bar-container {
+      width: 100%;
+      height: 5px;
+      background-color: rgba(233, 69, 96, 0.2);
+      margin: 1rem 0;
+    }
+
+    .loading-bar {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #e94560, #7301ed);
+      animation: loading 2s linear infinite;
+    }
+
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+   /* Enhanced Mobile Responsiveness */
     @media (max-width: 480px) {
       body {
         font-size: 14px; /* Slightly reduced base font size */
@@ -101,21 +183,13 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <div class="top-heading">
-      Igniting a Revolution in Innovation
-    </div>
-
     <div class="main-content">
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
 
-        <div class="loading-container">
-          <div class="loading-text">IGNITING PROGRESS...</div><br>
-        </div>
         <div class="loading-bar-container">
           <div class="loading-bar"></div>
         </div>
@@ -147,7 +221,6 @@
   </div>
 
   <script>
-    // Countdown to 2025-02-21
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
@@ -167,7 +240,6 @@
       }
     }
 
-    // Initialize and update countdown every second
     calculateTimeLeft();
     setInterval(calculateTimeLeft, 1000);
   </script>
