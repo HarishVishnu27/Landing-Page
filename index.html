@@ -66,8 +66,8 @@
       -webkit-text-fill-color: transparent;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif;
-      /* Removed slideIn animation; only glowText animation is retained */
-      animation: glowText 3s infinite;
+      /* Updated animation: pulsatingGlow */
+      animation: pulsatingGlow 3s infinite;
     }
 
     .left-section p {
@@ -272,22 +272,25 @@
       }
     }
 
-    /* Glowing Animation for "TEZARIO 2k25" Text */
-    @keyframes glowText {
+    /* Updated Pulsating Glow Animation for "TEZARIO 2k25" Text */
+    @keyframes pulsatingGlow {
       0% {
         text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
+        transform: scale(1);
       }
       50% {
         text-shadow: 0 0 20px #e94560, 0 0 30px #e94560, 0 0 40px #7301ed, 0 0 50px #7301ed;
+        transform: scale(1.05);
       }
       100% {
         text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
+        transform: scale(1);
       }
     }
 
-    /* Apply the glowText animation to the h1 */
+    /* Apply the pulsatingGlow animation to the h1 */
     .left-section h1 {
-      animation: glowText 3s infinite;
+      animation: pulsatingGlow 3s infinite;
     }
   </style>
 </head>
