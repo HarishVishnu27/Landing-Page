@@ -66,20 +66,8 @@
       -webkit-text-fill-color: transparent;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif;
-      /* Animation */
-      animation: slideIn 2s ease-out;
-    }
-
-    /* Keyframes for sliding animation */
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      /* Removed slideIn animation; only glowText animation is retained */
+      animation: glowText 3s infinite;
     }
 
     .left-section p {
@@ -253,6 +241,8 @@
 
       .left-section h1 {
         font-size: 4rem; /* Original was 2.5rem */
+        /* Zoom in to 150% */
+        transform: scale(1.5);
       }
 
       .left-section p {
@@ -282,12 +272,7 @@
       }
     }
 
-    /* Additional Animation for "TEZARIO 2k25" Text */
-    .left-section h1 {
-      position: relative;
-      animation: glowText 3s infinite;
-    }
-
+    /* Glowing Animation for "TEZARIO 2k25" Text */
     @keyframes glowText {
       0% {
         text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
@@ -298,6 +283,11 @@
       100% {
         text-shadow: 0 0 10px #e94560, 0 0 20px #e94560, 0 0 30px #7301ed, 0 0 40px #7301ed;
       }
+    }
+
+    /* Apply the glowText animation to the h1 */
+    .left-section h1 {
+      animation: glowText 3s infinite;
     }
   </style>
 </head>
