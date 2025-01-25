@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <!-- Ensures the page scales correctly on different devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tezario 2025 Hackathon</title>
+  <title>Tezario 2k25 Hackathon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset and base styling */
     * {
       margin: 0;
       padding: 0;
@@ -18,64 +15,48 @@
     body {
       font-family: 'Inter', sans-serif;
       background: #150e28;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 2rem;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .top-heading {
-      text-align: center;
       font-size: 2rem;
       font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 3rem;
-      letter-spacing: 1px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 2rem;
     }
 
     .main-content {
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .left-section {
-      flex: 1;
-      min-width: 300px;
-      color: white;
     }
 
     .left-section h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 1rem;
-      background: white;
+      background: linear-gradient(to right, #e94560, #7301ed, #6b46c1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
+      margin-bottom: 1rem;
     }
 
     .left-section p {
       font-size: 1.25rem;
-      color: #ffffff;
-      max-width: 35rem;
+      max-width: 600px;
       margin-bottom: 2rem;
     }
 
-    /* Loading bar styles */
     .loading-bar-container {
       width: 100%;
       height: 10px;
@@ -102,7 +83,6 @@
       0% {
         left: -100%;
       }
-
       100% {
         left: 100%;
       }
@@ -110,31 +90,25 @@
 
     @keyframes glow {
       0% {
-        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
       }
-
       50% {
-        box-shadow: 0 0 20px rgba(233, 69, 96, 1),
-          0 0 25px rgba(115, 1, 237, 1);
+        box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
       }
-
       100% {
-        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
       }
     }
 
     .countdown {
       display: flex;
-      justify-content: start;
+      justify-content: center;
       gap: 1.5rem;
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
 
     .countdown .time {
-      text-align: center;
       background-color: rgba(255, 252, 253, 0.1);
       padding: 1rem;
       border-radius: 10px;
@@ -148,7 +122,7 @@
     }
 
     .countdown .time p {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #6b46c1;
       margin-bottom: 0.5rem;
@@ -156,21 +130,13 @@
 
     .countdown .time span {
       font-size: 0.875rem;
-      color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .right-section {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      min-width: 300px;
-    }
-
     .right-section img {
       width: 100%;
-      max-width: 20rem;
+      max-width: 280px;
       height: auto;
       border-radius: 1rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -182,132 +148,94 @@
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
-    /* Tablet and larger smartphones */
-    @media (max-width: 1024px) {
-      .main-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
-
-      .left-section,
-      .right-section {
-        text-align: center;
-      }
-
-      .left-section h1 {
-        font-size: 3rem;
-      }
-
-      .countdown {
-        justify-content: center;
-      }
-
-      .right-section img {
-        max-width: 18rem;
-      }
-    }
-
     @media (max-width: 768px) {
-      .left-section h1 {
-        font-size: 3rem;
+      .container {
+        padding: 1.5rem;
       }
 
-      .countdown .time {
-        min-width: 80px;
-        padding: 1rem;
-      }
-
-      .countdown .time p {
-        font-size: 2.2rem;
-      }
-
-      .right-section img {
-        max-width: 18rem;
-      }
-    }
-
-    /* 
-      Increase sizes for very small devices (max-width: 480px):
-      - Double the font sizes
-      - Double the image sizes
-    */
-    @media (max-width: 480px) {
       .top-heading {
-        font-size: 3rem; /* Original was 2rem */
+        font-size: 1.75rem;
       }
 
       .left-section h1 {
-        font-size: 4rem; /* Original was 2.5rem */
+        font-size: 2.5rem;
       }
 
       .left-section p {
-        font-size: 2.4rem; /* Original was 1.2rem */
-      }
-
-      .countdown .time p {
-        font-size: 3.6rem; /* Original was 1.8rem */
-      }
-
-      .right-section img {
-        max-width: 28rem; /* Original was 14rem */
-      }
-
-      /* Optional: Adjust padding and margins for better spacing */
-      .container {
-        padding: 3rem;
+        font-size: 1.1rem;
       }
 
       .countdown .time {
-        padding: 1.5rem; /* Original was 0.75rem */
+        min-width: 70px;
+        padding: 0.75rem;
       }
 
-      /* Adjust loading-text if present */
-      .loading-text {
-        font-size: 2rem; /* Adjust as needed */
+      .countdown .time p {
+        font-size: 1.8rem;
+      }
+
+      .right-section img {
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-heading {
+        font-size: 1.5rem;
+      }
+
+      .left-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .left-section p {
+        font-size: 1rem;
+      }
+
+      .countdown .time {
+        min-width: 60px;
+        padding: 0.75rem;
+      }
+
+      .countdown .time p {
+        font-size: 1.6rem;
+      }
+
+      .right-section img {
+        max-width: 180px;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <div class="top-heading">
-      Igniting a Revolution in Innovation
-    </div>
-
+    <div class="top-heading">Igniting a Revolution in Innovation</div>
     <div class="main-content">
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
-
-        <div class="loading-container">
-          <div class="loading-text">IGNITING PROGRESS...</div><br>
-        </div>
         <div class="loading-bar-container">
           <div class="loading-bar"></div>
         </div>
-
         <div class="countdown">
           <div class="time">
-            <p>00</p>
+            <p>26</p>
             <span>Days</span>
           </div>
           <div class="time">
-            <p>00</p>
+            <p>03</p>
             <span>Hours</span>
           </div>
           <div class="time">
-            <p>00</p>
+            <p>14</p>
             <span>Minutes</span>
           </div>
           <div class="time">
-            <p>00</p>
+            <p>46</p>
             <span>Seconds</span>
           </div>
         </div>
       </div>
-
       <div class="right-section">
         <img src="man.png" alt="A man wearing VR goggles and touching a globe">
       </div>
@@ -315,7 +243,6 @@
   </div>
 
   <script>
-    // Countdown to 2025-02-21
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
@@ -335,10 +262,8 @@
       }
     }
 
-    // Initialize and update countdown every second
     calculateTimeLeft();
     setInterval(calculateTimeLeft, 1000);
   </script>
 </body>
-
 </html>
