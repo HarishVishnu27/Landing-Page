@@ -73,50 +73,49 @@
     }
 
     .loading-bar-container {
-  width: 100%;
-  height: 10px;
-  background-color: rgba(233, 69, 96, 0.2); /* Light background */
-  border-radius: 5px; /* Rounded corners */
-  margin-bottom: 2rem;
-  overflow: hidden;
-  position: relative;
-}
+      width: 100%;
+      height: 10px;
+      background-color: rgba(233, 69, 96, 0.2); /* Light background */
+      border-radius: 5px; /* Rounded corners */
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
 
-.loading-bar {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
-  background-size: 200% 100%; /* Extends the gradient */
-  animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
-  position: absolute;
-  top: 0;
-  left: -100%; /* Start off-screen for the animation */
-  border-radius: 5px;
-}
+    .loading-bar {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
+      background-size: 200% 100%; /* Extends the gradient */
+      animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
+      position: absolute;
+      top: 0;
+      left: -100%; /* Start off-screen for the animation */
+      border-radius: 5px;
+    }
 
-/* Infinite horizontal movement animation */
-@keyframes loading {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
+    /* Infinite horizontal movement animation */
+    @keyframes loading {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
 
-/* Glowing effect on the loading bar */
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
-  }
-}
-
+    /* Glowing effect on the loading bar */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+      }
+    }
 
     .countdown {
       display: flex;
@@ -180,10 +179,69 @@
       margin-top: 3rem;
     }
 
+    /* Media Queries for responsiveness */
+
+    /* Mobile view */
+    @media (max-width: 600px) {
+      .top-heading {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .main-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .left-section {
+        min-width: 100%;
+        padding: 1rem;
+      }
+
+      .left-section h1 {
+        font-size: 3rem;
+      }
+
+      .countdown {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .right-section img {
+        max-width: 100%;
+        max-height: 20rem;
+      }
+    }
+
+    /* Tablet view */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .left-section {
+        min-width: 100%;
+      }
+
+      .left-section h1 {
+        font-size: 3.5rem;
+      }
+
+      .right-section img {
+        max-width: 100%;
+      }
+    }
+
+    /* Laptop and Desktop view */
     @media (max-width: 1024px) {
       .main-content {
         flex-direction: column;
         text-align: center;
+        gap: 3rem;
       }
 
       .left-section, .right-section {
@@ -199,6 +257,17 @@
         justify-content: center;
       }
     }
+
+    /* Larger Screens */
+    @media (max-width: 1200px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .main-content {
+        gap: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -211,9 +280,8 @@
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
-	
-<div class="loading-container">
-          
+
+        <div class="loading-container">
           <div class="loading-text">IGNITING PROGRESS...</div><br>
         </div>
         <div class="loading-bar-container">
@@ -244,8 +312,7 @@
         <img src="man.png" alt="A man wearing VR goggles and touching a globe">
       </div>
     </div>
-
-     </div>
+  </div>
 
   <script>
     const targetDate = new Date("2025-02-21T00:00:00");
