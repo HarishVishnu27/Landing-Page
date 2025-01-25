@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Ensures normal 100% scale on mobile, then we apply our own transform for 175% -->
+  <!-- Ensures normal 100% scale on mobile, then we apply our own transform for doubling (200%) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tezario 2025 Hackathon</title>
   <link
@@ -224,23 +224,18 @@
     }
 
     /*
-      Scale the page to ~175% on mobile widths below 480px.
-      Also adjust .container width and margin to counter
+      Scale the page to 200% on mobile widths below 480px.
+      Adjust .container width and margin to counter
       the horizontal overflow caused by scaling.
     */
     @media (max-width: 480px) {
       body {
-        transform: scale(1.75);
+        transform: scale(2);
         transform-origin: top left;
       }
       .container {
-        width: 57.14%;
-        margin-left: -28.57%;
-        /* 
-           Explanation:
-           - 1/1.75 ~ 57.14%
-           - Half of 57.14% ~ 28.57%
-        */
+        width: 50%;
+        margin-left: -25%;
       }
 
       .container {
