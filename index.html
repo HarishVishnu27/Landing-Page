@@ -3,10 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- This ensures the page layout fits various screen sizes at 100% zoom -->
+  <!-- Ensures normal 100% scale on mobile, then we apply our own transform for 175% -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tezario 2025 Hackathon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     /* Reset and base styling */
     * {
@@ -75,6 +78,7 @@
       margin-bottom: 2rem;
     }
 
+    /* Loading bar styles */
     .loading-bar-container {
       width: 100%;
       height: 10px;
@@ -98,26 +102,22 @@
     }
 
     @keyframes loading {
-      0% {
-        left: -100%;
-      }
-      100% {
-        left: 100%;
-      }
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
     @keyframes glow {
       0% {
         box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
+                    0 0 15px rgba(115, 1, 237, 0.8);
       }
       50% {
         box-shadow: 0 0 20px rgba(233, 69, 96, 1),
-          0 0 25px rgba(115, 1, 237, 1);
+                    0 0 25px rgba(115, 1, 237, 1);
       }
       100% {
         box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
+                    0 0 15px rgba(115, 1, 237, 0.8);
       }
     }
 
@@ -178,6 +178,7 @@
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
+    /* Tablet and larger smartphones */
     @media (max-width: 1024px) {
       .main-content {
         flex-direction: column;
@@ -222,12 +223,10 @@
       }
     }
 
-    /* 
-       For very small devices (max-width: 480px),
-       we apply a transform-based scale to mimic ~175% zoom.
-       We then counteract the width overflow by reducing .container width
-       to (100% / 1.75 ≈ 57.14%) and shifting it left by about half 
-       that difference so it appears centered.
+    /*
+      Scale the page to ~175% on mobile widths below 480px.
+      Also adjust .container width and margin to counter
+      the horizontal overflow caused by scaling.
     */
     @media (max-width: 480px) {
       body {
@@ -237,6 +236,11 @@
       .container {
         width: 57.14%;
         margin-left: -28.57%;
+        /* 
+           Explanation:
+           - 1/1.75 ~ 57.14%
+           - Half of 57.14% ~ 28.57%
+        */
       }
 
       .container {
@@ -311,6 +315,7 @@
   </div>
 
   <script>
+    // Countdown to 2025-02-21
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
