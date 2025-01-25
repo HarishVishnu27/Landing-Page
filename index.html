@@ -37,21 +37,20 @@
       color: #ffffff;
       margin-bottom: 3rem;
       letter-spacing: 1px;
-      text-transform: uppercase;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .main-content {
       display: flex;
       align-items: center;
-      gap: 4rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
     .left-section {
       flex: 1;
-      min-width: 400px;
-      color:white;
+      min-width: 300px;
+      color: white;
     }
 
     .left-section h1 {
@@ -62,7 +61,7 @@
       background: white;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 
     .left-section p {
@@ -73,56 +72,54 @@
     }
 
     .loading-bar-container {
-  width: 100%;
-  height: 10px;
-  background-color: rgba(233, 69, 96, 0.2); /* Light background */
-  border-radius: 5px; /* Rounded corners */
-  margin-bottom: 2rem;
-  overflow: hidden;
-  position: relative;
-}
+      width: 100%;
+      height: 10px;
+      background-color: rgba(233, 69, 96, 0.2);
+      border-radius: 5px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
 
-.loading-bar {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
-  background-size: 200% 100%; /* Extends the gradient */
-  animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
-  position: absolute;
-  top: 0;
-  left: -100%; /* Start off-screen for the animation */
-  border-radius: 5px;
-}
+    .loading-bar {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
+      background-size: 200% 100%;
+      animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      border-radius: 5px;
+    }
 
-/* Infinite horizontal movement animation */
-@keyframes loading {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
+    @keyframes loading {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
 
-/* Glowing effect on the loading bar */
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
-  }
-}
-
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+      }
+    }
 
     .countdown {
       display: flex;
       justify-content: start;
       gap: 1.5rem;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .countdown .time {
@@ -130,8 +127,8 @@
       background-color: rgba(255, 252, 253, 0.1);
       padding: 1rem;
       border-radius: 10px;
-      min-width: 100px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 80px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
 
@@ -140,7 +137,7 @@
     }
 
     .countdown .time p {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #6b46c1;
       margin-bottom: 0.5rem;
@@ -157,21 +154,21 @@
       flex: 1;
       display: flex;
       justify-content: center;
-      min-width: 400px;
+      min-width: 300px;
     }
 
     .right-section img {
       width: 100%;
-      max-width: 25rem;
+      max-width: 20rem;
       height: auto;
       border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       transition: all 0.4s ease;
     }
 
     .right-section img:hover {
       transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
     .horizontal-line {
@@ -184,19 +181,68 @@
       .main-content {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
       }
 
       .left-section, .right-section {
-        min-width: 100%;
         text-align: center;
       }
 
       .left-section h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
       }
 
       .countdown {
         justify-content: center;
+      }
+
+      .right-section img {
+        max-width: 18rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .left-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .countdown .time {
+        min-width: 70px;
+        padding: 0.75rem;
+      }
+
+      .countdown .time p {
+        font-size: 2rem;
+      }
+
+      .right-section img {
+        max-width: 15rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .left-section h1 {
+        font-size: 2rem;
+      }
+
+      .left-section p {
+        font-size: 1rem;
+      }
+
+      .countdown .time {
+        padding: 0.5rem;
+      }
+
+      .countdown .time p {
+        font-size: 1.5rem;
+      }
+
+      .right-section img {
+        max-width: 12rem;
       }
     }
   </style>
@@ -211,9 +257,8 @@
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
-	
-<div class="loading-container">
-          
+
+        <div class="loading-container">
           <div class="loading-text">IGNITING PROGRESS...</div><br>
         </div>
         <div class="loading-bar-container">
@@ -244,8 +289,7 @@
         <img src="man.png" alt="A man wearing VR goggles and touching a globe">
       </div>
     </div>
-
-     </div>
+  </div>
 
   <script>
     const targetDate = new Date("2025-02-21T00:00:00");
