@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tezario 2025 Hackathon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #150e28;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .top-heading {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 3rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .main-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .left-section {
+      flex: 1;
+      min-width: 400px;
+      color:white;
+    }
+
+    .left-section h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .left-section p {
+      font-size: 1.25rem;
+      color: #ffffff;
+      max-width: 35rem;
+      margin-bottom: 2rem;
+    }
+
+    .loading-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(233, 69, 96, 0.2); /* Light background */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
+  background-size: 200% 100%; /* Extends the gradient */
+  animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen for the animation */
+  border-radius: 5px;
+}
+
+/* Infinite horizontal movement animation */
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Glowing effect on the loading bar */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(233, 69, 96, 1), 0 0 25px rgba(115, 1, 237, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.8), 0 0 15px rgba(115, 1, 237, 0.8);
+  }
+}
+
+
+    .countdown {
+      display: flex;
+      justify-content: start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .countdown .time {
+      text-align: center;
+      background-color: rgba(255, 252, 253, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      min-width: 100px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .countdown .time:hover {
+      transform: translateY(-5px);
+    }
+
+    .countdown .time p {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #6b46c1;
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown .time span {
+      font-size: 0.875rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 400px;
+    }
+
+    .right-section img {
+      width: 100%;
+      max-width: 25rem;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.4s ease;
+    }
+
+    .right-section img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .horizontal-line {
+      width: 100%;
+      border-top: 2px solid rgba(233, 69, 96, 0.2);
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left-section, .right-section {
+        min-width: 100%;
+        text-align: center;
+      }
+
+      .left-section h1 {
+        font-size: 3.5rem;
+      }
+
+      .countdown {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-heading">
+      Igniting a Revolution in Innovation
+    </div>
+
+    <div class="main-content">
+      <div class="left-section">
+        <h1>TEZARIO 2k25</h1>
+        <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
+	
+<div class="loading-container">
+          
+          <div class="loading-text">IGNITING PROGRESS...</div><br>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+        </div>
+
+        <div class="countdown">
+          <div class="time">
+            <p>00</p>
+            <span>Days</span>
+          </div>
+          <div class="time">
+            <p>00</p>
+            <span>Hours</span>
+          </div>
+          <div class="time">
+            <p>00</p>
+            <span>Minutes</span>
+          </div>
+          <div class="time">
+            <p>00</p>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <img src="man.png" alt="A man wearing VR goggles and touching a globe">
+      </div>
+    </div>
+
+     </div>
+
+  <script>
+    const targetDate = new Date("2025-02-21T00:00:00");
+
+    function calculateTimeLeft() {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        document.querySelectorAll('.countdown .time p').forEach((el, index) => {
+          const values = [days, hours, minutes, seconds];
+          el.textContent = values[index].toString().padStart(2, "0");
+        });
+      }
+    }
+
+    setInterval(calculateTimeLeft, 1000);
+  </script>
+</body>
+</html>
