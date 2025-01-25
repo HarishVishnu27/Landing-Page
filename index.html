@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Width set to device-width for better responsiveness -->
+  <!-- Let the device control its own scale at 100% -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tezario 2025 Hackathon</title>
   <link
@@ -10,7 +10,7 @@
     rel="stylesheet"
   />
   <style>
-    /* Reset and basic styling */
+    /* Base Reset and Styling */
     * {
       margin: 0;
       padding: 0;
@@ -22,11 +22,9 @@
       background: #150e28;
       color: #ffffff;
       line-height: 1.6;
-      margin: 0;
       overflow-x: hidden;
     }
 
-    /* Container for the entire page */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -37,7 +35,6 @@
       justify-content: center;
     }
 
-    /* Top heading */
     .top-heading {
       text-align: center;
       font-size: 2rem;
@@ -45,18 +42,15 @@
       color: #ffffff;
       margin-bottom: 3rem;
       letter-spacing: 1px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Main content layout */
     .main-content {
       display: flex;
       align-items: center;
       gap: 2rem;
-      flex-wrap: nowrap; /* We'll control wrapping with media queries */
+      flex-wrap: nowrap;
     }
 
-    /* Left section (text) */
     .left-section {
       flex: 1;
       min-width: 300px;
@@ -66,12 +60,9 @@
       font-size: 4rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      /* Gradient text effect */
-      background: linear-gradient(90deg, #fff, #e0e0e0);
+      background: linear-gradient(90deg, #ffffff, #e0e0e0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
     }
 
     .left-section p {
@@ -81,7 +72,6 @@
       color: #ffffff;
     }
 
-    /* Loading bar */
     .loading-bar-container {
       width: 100%;
       height: 10px;
@@ -112,7 +102,6 @@
         left: 100%;
       }
     }
-
     @keyframes glow {
       0% {
         box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
@@ -128,7 +117,6 @@
       }
     }
 
-    /* Countdown container */
     .countdown {
       display: flex;
       justify-content: start;
@@ -137,7 +125,6 @@
       flex-wrap: wrap;
     }
 
-    /* Countdown time blocks */
     .countdown .time {
       text-align: center;
       background-color: rgba(255, 252, 253, 0.1);
@@ -166,7 +153,6 @@
       letter-spacing: 1px;
     }
 
-    /* Right section (image) */
     .right-section {
       flex: 1;
       display: flex;
@@ -188,9 +174,9 @@
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
-    /* Media queries for responsive behavior */
+    /* Media Queries for responsiveness (no forced zoom) */
 
-    /* Larger tablets / smaller desktops */
+    /* Tablets and smaller desktops */
     @media (max-width: 1024px) {
       .main-content {
         flex-wrap: wrap;
@@ -210,16 +196,14 @@
       }
     }
 
-    /* Smaller tablets / large phones */
+    /* Large phones / smaller tablets */
     @media (max-width: 768px) {
       .left-section h1 {
         font-size: 2.5rem;
       }
-
       .left-section p {
-        font-size: 1.1rem;
+        font-size: 1.125rem;
       }
-
       .countdown .time {
         min-width: 70px;
         padding: 0.75rem;
@@ -232,81 +216,43 @@
       }
     }
 
-    /* Small phones (up to 480px) */
+    /* Phones (max-width: 480px) */
     @media (max-width: 480px) {
       .container {
         padding: 1rem;
       }
-
+      .main-content {
+        flex-wrap: wrap;
+      }
       .top-heading {
         font-size: 1.5rem;
         margin-bottom: 2rem;
       }
-
       .left-section h1 {
         font-size: 2rem;
       }
-
       .left-section p {
         font-size: 1rem;
       }
-
       .countdown .time {
         padding: 0.5rem;
       }
-
       .countdown .time p {
         font-size: 1.5rem;
       }
-
       .right-section img {
         max-width: 12rem;
-      }
-
-      /* Slightly scale up for smaller devices to mimic about 175% */
-      body {
-        transform: scale(1.1);
-        transform-origin: top left;
-      }
-
-      .container {
-        width: 90%; /* Adjust width to fit the scaled container */
-        margin-left: -5%;
-      }
-    }
-
-    /* Extra-small phones (up to 360px) */
-    @media (max-width: 360px) {
-      body {
-        transform: scale(1.2);
-        transform-origin: top left;
-      }
-
-      .container {
-        width: 83.33%; /* 100 / 1.2 = ~83.33% */
-        margin-left: -8.3%;
-      }
-
-      .left-section h1 {
-        font-size: 1.8rem;
-      }
-
-      .countdown .time p {
-        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Main Heading -->
     <div class="top-heading">
       Igniting a Revolution in Innovation
     </div>
 
-    <!-- Main Content Wrapper -->
     <div class="main-content">
-      <!-- Left Section (Text) -->
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>
@@ -314,7 +260,6 @@
           groundbreaking prize!
         </p>
 
-        <!-- Loading Bar -->
         <div class="loading-container">
           <div class="loading-text">IGNITING PROGRESS...</div><br />
         </div>
@@ -322,7 +267,6 @@
           <div class="loading-bar"></div>
         </div>
 
-        <!-- Countdown Timer -->
         <div class="countdown">
           <div class="time">
             <p>00</p>
@@ -343,7 +287,6 @@
         </div>
       </div>
 
-      <!-- Right Section (Image) -->
       <div class="right-section">
         <img
           src="man.png"
@@ -353,8 +296,8 @@
     </div>
   </div>
 
-  <!-- Countdown Timer Script -->
   <script>
+    // Update this date to your target date
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
@@ -367,6 +310,7 @@
         const minutes = Math.floor((difference / (1000 * 60)) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
 
+        // Update the countdown display
         document.querySelectorAll(".countdown .time p").forEach((el, index) => {
           const values = [days, hours, minutes, seconds];
           el.textContent = values[index].toString().padStart(2, "0");
@@ -374,8 +318,9 @@
       }
     }
 
+    // Run countdown every second
     setInterval(calculateTimeLeft, 1000);
-    calculateTimeLeft();
+    calculateTimeLeft(); // Initial call
   </script>
 </body>
 </html>
