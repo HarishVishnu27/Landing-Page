@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Tezario 2025 Hackathon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -13,245 +12,126 @@
       box-sizing: border-box;
     }
 
+    html {
+      font-size: 16px;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #150e28;
       color: #ffffff;
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
     }
 
     .container {
+      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
-      min-height: 100vh;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .top-heading {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 3rem;
-      letter-spacing: 1px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
     }
 
     .main-content {
       display: flex;
       align-items: center;
-      gap: 2rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .left-section {
+    .left-section, .right-section {
       flex: 1;
-      min-width: 300px;
-      color: white;
+      min-width: 280px;
+      width: 100%;
+      text-align: center;
     }
 
     .left-section h1 {
-      font-size: 4rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 1rem;
       background: white;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
     }
 
     .left-section p {
-      font-size: 1.25rem;
-      color: #ffffff;
-      max-width: 35rem;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .countdown .time {
+      background-color: rgba(255, 252, 253, 0.1);
+      padding: 0.5rem;
+      border-radius: 5px;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .countdown .time p {
+      font-size: 1.5rem;
+      color: #6b46c1;
+      margin-bottom: 0.25rem;
+    }
+
+    .countdown .time span {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .right-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
     }
 
     .loading-bar-container {
       width: 100%;
-      height: 10px;
+      height: 5px;
       background-color: rgba(233, 69, 96, 0.2);
-      border-radius: 5px;
-      margin-bottom: 2rem;
-      overflow: hidden;
-      position: relative;
+      margin: 1rem 0;
     }
 
     .loading-bar {
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, #e94560, #7301ed, #6b46c1);
-      background-size: 200% 100%;
-      animation: loading 2s linear infinite, glow 1s ease-in-out infinite alternate;
-      position: absolute;
-      top: 0;
-      left: -100%;
-      border-radius: 5px;
+      background: linear-gradient(90deg, #e94560, #7301ed);
+      animation: loading 2s linear infinite;
     }
 
     @keyframes loading {
-      0% { left: -100%; }
-      100% { left: 100%; }
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(233, 69, 96, 1),
-          0 0 25px rgba(115, 1, 237, 1);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(233, 69, 96, 0.8),
-          0 0 15px rgba(115, 1, 237, 0.8);
-      }
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: start;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .countdown .time {
-      text-align: center;
-      background-color: rgba(255, 252, 253, 0.1);
-      padding: 1rem;
-      border-radius: 10px;
-      min-width: 80px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .countdown .time:hover {
-      transform: translateY(-5px);
-    }
-
-    .countdown .time p {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #6b46c1;
-      margin-bottom: 0.5rem;
-    }
-
-    .countdown .time span {
-      font-size: 0.875rem;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .right-section {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      min-width: 300px;
-    }
-
-    .right-section img {
-      width: 100%;
-      max-width: 20rem;
-      height: auto;
-      border-radius: 1rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      transition: all 0.4s ease;
-    }
-
-    .right-section img:hover {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Responsive Design Improvements */
-    @media (max-width: 1024px) {
-      .main-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
-
-      .left-section,
-      .right-section {
-        text-align: center;
-        width: 100%;
-      }
-
-      .left-section h1 {
-        font-size: 3rem;
-      }
-
-      .countdown {
-        justify-content: center;
-      }
-
-      .right-section img {
-        max-width: 18rem;
-      }
-    }
-
-    /* Specific Mobile Device Scaling */
     @media (max-width: 480px) {
-      body {
-        font-size: 16px; /* Base font size for scaling */
+      html {
+        font-size: 14px;
       }
 
       .container {
-        padding: 1rem;
-      }
-
-      .top-heading {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .left-section h1 {
-        font-size: 2.5rem;
-      }
-
-      .left-section p {
-        font-size: 1rem;
-      }
-
-      .countdown .time {
-        min-width: 60px;
+        width: 95%;
         padding: 0.5rem;
-      }
-
-      .countdown .time p {
-        font-size: 1.8rem;
-      }
-
-      .countdown .time span {
-        font-size: 0.7rem;
-      }
-
-      .right-section img {
-        max-width: 16rem;
-      }
-    }
-
-    /* Very Small Mobile Devices */
-    @media (max-width: 320px) {
-      .container {
-        padding: 0.5rem;
-      }
-
-      .top-heading {
-        font-size: 1.2rem;
       }
 
       .left-section h1 {
         font-size: 2rem;
+      }
+
+      .left-section p {
+        font-size: 0.9rem;
       }
 
       .countdown .time {
@@ -260,26 +140,29 @@
       }
 
       .countdown .time p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 320px) {
+      html {
+        font-size: 12px;
+      }
+
+      .countdown .time {
+        min-width: 45px;
+        padding: 0.2rem;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <div class="top-heading">
-      Igniting a Revolution in Innovation
-    </div>
-
     <div class="main-content">
       <div class="left-section">
         <h1>TEZARIO 2k25</h1>
         <p>Participate in Tezario Hackathon 2025, stand a chance to win a groundbreaking prize!</p>
 
-        <div class="loading-container">
-          <div class="loading-text">IGNITING PROGRESS...</div><br>
-        </div>
         <div class="loading-bar-container">
           <div class="loading-bar"></div>
         </div>
@@ -311,7 +194,6 @@
   </div>
 
   <script>
-    // Countdown to 2025-02-21
     const targetDate = new Date("2025-02-21T00:00:00");
 
     function calculateTimeLeft() {
@@ -331,10 +213,8 @@
       }
     }
 
-    // Initialize and update countdown every second
     calculateTimeLeft();
     setInterval(calculateTimeLeft, 1000);
   </script>
 </body>
-
 </html>
